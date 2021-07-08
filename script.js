@@ -242,6 +242,7 @@ function noteOn(midiNote, velocity) {
 }
 
 function noteOff(midiNote, velocity) {
+    console.log("off");
     console.log(midiNote);
     for (i=0; i<noteStore.length; i++) {
         if (noteStore[i].noteNumber === midiNote) {
@@ -251,13 +252,13 @@ function noteOff(midiNote, velocity) {
 }
 
 function dampenNotes(index) {
-   noteStore[i].gain1.gain.linearRampToValueAtTime(0, ac.currentTime + .05);
-   noteStore[i].gain2.gain.linearRampToValueAtTime(0, ac.currentTime + .05);
-   noteStore[i].gain3.gain.linearRampToValueAtTime(0, ac.currentTime + .05);
-   noteStore[i].gain4.gain.linearRampToValueAtTime(0, ac.currentTime + .05);
-   noteStore[i].gain5.gain.linearRampToValueAtTime(0, ac.currentTime + .05);
-   noteStore[i].gain6.gain.linearRampToValueAtTime(0, ac.currentTime + .05);
-   noteStore[i].gain7.gain.linearRampToValueAtTime(0, ac.currentTime + .05);
+   noteStore[i].gain1.gain.linearRampToValueAtTime(0, ac.currentTime + .1);
+   noteStore[i].gain2.gain.linearRampToValueAtTime(0, ac.currentTime + .1);
+   noteStore[i].gain3.gain.linearRampToValueAtTime(0, ac.currentTime + .1);
+   noteStore[i].gain4.gain.linearRampToValueAtTime(0, ac.currentTime + .1);
+   noteStore[i].gain5.gain.linearRampToValueAtTime(0, ac.currentTime + .1);
+   noteStore[i].gain6.gain.linearRampToValueAtTime(0, ac.currentTime + .1);
+   noteStore[i].gain7.gain.linearRampToValueAtTime(0, ac.currentTime + .1);
 }
 
 function player(note, velocity) {
