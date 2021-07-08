@@ -16,6 +16,20 @@ function startOscillators() {
     storeNote2.osc5.start();
     storeNote2.osc6.start();
     storeNote2.osc7.start();
+    storeNote3.osc1.start();
+    storeNote3.osc2.start();
+    storeNote3.osc3.start();
+    storeNote3.osc4.start();
+    storeNote3.osc5.start();
+    storeNote3.osc6.start();
+    storeNote3.osc7.start();
+    storeNote4.osc1.start();
+    storeNote4.osc2.start();
+    storeNote4.osc3.start();
+    storeNote4.osc4.start();
+    storeNote4.osc5.start();
+    storeNote4.osc6.start();
+    storeNote4.osc7.start();
 }
 
 var count = 0;
@@ -58,15 +72,57 @@ const storeNote2 = {
     gain7: ac.createGain()
 }
 
+const storeNote3 = {
+    noteNumber: 0,
+    osc1: ac.createOscillator(),
+    gain1: ac.createGain(),
+    osc2: ac.createOscillator(),
+    gain2: ac.createGain(),
+    osc3: ac.createOscillator(),
+    gain3: ac.createGain(),
+    osc4: ac.createOscillator(),
+    gain4: ac.createGain(),
+    osc5: ac.createOscillator(),
+    gain5: ac.createGain(),
+    osc6: ac.createOscillator(),
+    gain6: ac.createGain(),
+    osc7: ac.createOscillator(),
+    gain7: ac.createGain()
+}
+
+const storeNote4 = {
+    noteNumber: 0,
+    osc1: ac.createOscillator(),
+    gain1: ac.createGain(),
+    osc2: ac.createOscillator(),
+    gain2: ac.createGain(),
+    osc3: ac.createOscillator(),
+    gain3: ac.createGain(),
+    osc4: ac.createOscillator(),
+    gain4: ac.createGain(),
+    osc5: ac.createOscillator(),
+    gain5: ac.createGain(),
+    osc6: ac.createOscillator(),
+    gain6: ac.createGain(),
+    osc7: ac.createOscillator(),
+    gain7: ac.createGain()
+}
+
 const noteStore = [];
 
 function playSound(freq,noteNum) {
     count++;
-    if (count % 2 === 1) {
+    if (count % 4 === 1) {
         noteStore.unshift(storeNote1);
     }
-    else {
+    else if (count % 4 === 2) {
         noteStore.unshift(storeNote2);
+    }
+    else if (count % 4 === 3) {
+        noteStore.unshift(storeNote3);
+    }
+    else if (count % 4 === 0) {
+        noteStore.unshift(storeNote4);
     }
     if (noteStore.length > 20) {
         noteStore.splice(-1,1);
