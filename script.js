@@ -112,14 +112,6 @@ function playSound(freq,noteNum) {
 
     console.log(noteStore);
     console.log(noteStore[0]);
-
-    // setTimeout(function() {gain1.gain.value = 0}, 500);
-    // setTimeout(function() {gain2.gain.value = 0}, 500);
-    // setTimeout(function() {gain3.gain.value = 0}, 500);
-    // setTimeout(function() {gain4.gain.value = 0}, 500);
-    // setTimeout(function() {gain5.gain.value = 0}, 500);
-    // setTimeout(function() {gain6.gain.value = 0}, 500);
-    // setTimeout(function() {gain7.gain.value = 0}, 500);
 }
 
 if (navigator.requestMIDIAccess) {
@@ -191,30 +183,13 @@ function listInputs(inputs) {
 
 function noteOn(midiNote, velocity) {
     player(midiNote, velocity);
-    // console.log("on");
 }
 
 function noteOff(midiNote, velocity) {
-    // player(midiNote, velocity);
-    // console.log("off");
     console.log(midiNote);
     for (i=0; i<noteStore.length; i++) {
         if (noteStore[i].noteNumber === midiNote) {
             dampenNotes(i);
-            // noteStore[i].gain1.gain.value = 0;
-            // noteStore[i].gain2.gain.value = 0;
-            // noteStore[i].gain3.gain.value = 0;
-            // noteStore[i].gain4.gain.value = 0;
-            // noteStore[i].gain5.gain.value = 0;
-            // noteStore[i].gain6.gain.value = 0;
-            // noteStore[i].gain7.gain.value = 0;
-            // rapidDecay(noteStore[i].gain1.gain.value);
-            // rapidDecay(noteStore[i].gain2.gain.value);
-            // rapidDecay(noteStore[i].gain3.gain.value);
-            // rapidDecay(noteStore[i].gain4.gain.value);
-            // rapidDecay(noteStore[i].gain5.gain.value);
-            // rapidDecay(noteStore[i].gain6.gain.value);
-            // rapidDecay(noteStore[i].gain7.gain.value);
         }
     }
 }
