@@ -274,3 +274,9 @@ function onMIDIFailure(e) {
 function convertFreq(note) {
     return (440 / 32) * (2 ** ((note - 9) / 12));
 }
+
+//graphs
+var b = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-.5, 2, 2, -2], axis: true});
+b.create('functiongraph', [function(x){return Math.sin(2*Math.PI*x);},0,4*Math.PI]);
+b.create('functiongraph', [function(x){return Math.sin(4*Math.PI*x);},0,4*Math.PI],{strokeColor:'red',strokeWidth:1});
+b.create('functiongraph', [function(x){return (Math.sin(4*Math.PI*x)+Math.sin(2*Math.PI*x))/2;},0,4*Math.PI],{strokeColor:'green',strokeWidth:2});

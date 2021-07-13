@@ -8,6 +8,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <link rel="stylesheet" type="text/css" href="jsxgraph.css" />
+        <script type="text/javascript" src="jsxgraphcore.js"></script>
     </head>
     <body>
         <button id="start">Start</button>
@@ -84,8 +86,10 @@
             </label>
         </form>
 
-
-
+        <div id="jxgbox" class="jxgbox" style="width:500px; height:500px;"></div>
+        <!-- <script type="text/javascript">
+        var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-10, 10, 10, -10], axis:true});
+        </script> -->
 
         <script src="script.js" async defer></script>
     </body>
